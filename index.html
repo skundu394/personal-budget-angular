@@ -3,28 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Budget</title>
-    <link rel="stylesheet" href="/reset.css">
-    <link rel="stylesheet" href="/main.css">
+<!-- This is a Semantic HTML Change -->
+        <title>Welcome to Sri Harini's Personal Budget Website!</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
 
     <div class="menu">
+        <!-- This is an A11y Change, Using ARIA for Accessibility -->
+        <nav aria-label="Main navigation">
         <ul>
             <li><a href="/">Homepage</a></li>
             <li><a href="/about.html">About</a></li>
             <li><a href="/login.html">Login</a></li>
             <li><a href="https://google.com">Google</a></li>
         </ul>
+    </nav>
     </div>
 
     <div class="hero">
-        <h1>Personal Budget</h1>
+        <!-- This is a Semantic HTML Change -->
+        <h1> <div class="center">Personal Budget</h1>
         <h2>A personal-budget management app</h2>
     </div>
-
+    </div>
+    
     <div class="container center">
-
+        <!-- This is an A11y Change,  Accessible Images with alt -->
+        <img src="bg.png" alt="Mobile and Desktop accessible for personal budget management." />
         <div class="page-area">
 
             <div class="text-box">
@@ -60,34 +67,83 @@
             </div>
     
             <div class="text-box">
-                <h1>Stay on track</h1>
+                <!-- This is an SEO Change -->
+                <h1>Ask AI!</h1>
                 <p>
-                    Do you know where you are spending your money? If you really stop to track it down,
-                    you would get surprised! Proper budget management depends on real data... and this
-                    app will help you with that!
+                    <h2>Expense Tracker</h2>
+                    <!-- This is an A11y Change, Accessible Form -->
+                    <form action="/track-expenses" method="POST">
+                        <label for="expense-name">Expense Name:</label><br>
+                        <input type="text" id="expense-name" name="expenseName"><br><br>
+
+                        <label for="expense-amount">Amount:</label><br>
+                        <input type="number" id="expense-amount" name="expenseAmount"><br><br>
+
+                        <label for="expense-category">Category:</label><br>
+                        <select id="expense-category" name="expenseCategory">
+                            <option value="groceries">Groceries</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="transportation">Transportation</option>
+                            <option value="utilities">Utilities</option>
+                        </select><br><br>
+
+                        <input type="submit" value="Track Expense">
+                    </form>
+
                 </p>
             </div>
     
             <div class="text-box">
-                <h1>Alerts</h1>
+                <!-- This is an SEO Change -->
+                <h1>Savings Goals</h1>
                 <p>
-                    What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
+                    <form action="/set-goals" method="POST">
+                    <label for="goal-name">Goal Name:</label><br>
+                    <input type="text" id="goal-name" name="goalName"><br><br>
+                    
+                    <label for="goal-amount">Goal Amount:</label><br>
+                    <input type="number" id="goal-amount" name="goalAmount"><br><br>
+                    
+                    <label for="goal-duration">Time to Reach Goal (months):</label><br>
+                    <input type="number" id="goal-duration" name="goalDuration"><br><br>
+                    
+                    <input type="submit" value="Set Goal">
+                    </form>
+
                 </p>
             </div>
     
             <div class="text-box">
-                <h1>Results</h1>
+                <!-- This is an SEO Change -->
+                <h1>Budget Forecast</h1>
                 <p>
-                    People who stick to a financial plan, budgeting every expense, get out of debt faster!
-                    Also, they to live happier lives... since they expend without guilt or fear... 
-                    because they know it is all good and accounted for.
+                    <form action="/forecast-budget" method="POST">
+                    <label for="forecast-months">Forecast for next (months):</label><br>
+                    <input type="number" id="forecast-months" name="forecastMonths" min="1" max="12"><br><br>
+                    
+                    <input type="submit" value="Get Forecast">
+                    </form>
+
+                    <h2>Recommended Savings</h2>
+                    <p>Based on your past expenses, AI recommends reducing dining expenses by 15% to save an extra $200/month.</p>
+
                 </p>
             </div>
     
             <div class="text-box">
-                <h1>Free</h1>
-                <p>
-                    This app is free!!! And you are the only one holding your data!
+                <!-- This is an SEO Change -->
+                    <h1>Set Bill Reminders</h1>
+                    <p>
+                        <form action="/set-reminders" method="POST">
+                        <label for="bill-name">Bill Name:</label><br>
+                        <input type="text" id="bill-name" name="billName"><br><br>
+                        
+                        <label for="due-date">Due Date:</label><br>
+                        <input type="date" id="due-date" name="dueDate"><br><br>
+                        
+                        <input type="submit" value="Set Reminder">
+                        </form>
+
                 </p>
             </div>
 
@@ -95,11 +151,13 @@
 
     </div>
 
+    <footer>
     <div class="bottom">
+        <!-- This is a Semantic HTML Change -->
         <div class="center">
-            All rights reserved &copy; Fabio Nolasco
+            All rights reserved &copy; Sri Harini Kundu
         </div>
     </div>
-
+</footer>
 </body>
 </html>
