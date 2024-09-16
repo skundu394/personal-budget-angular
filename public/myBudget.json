@@ -1,0 +1,32 @@
+{
+    "myBudget": [
+    {
+        "title": "Pharmacy",
+        "budget": 120
+    },
+    {
+        "title": "Insurance",
+        "budget": 220
+    },
+    {
+        "title": "Groceries",
+        "budget": 300
+    },
+    {
+        "title": "Rent",
+        "budget": 1200
+    },
+    {
+        "title": "Travel Expenses",
+        "budget": 200
+    },
+    {
+        "title": "Internet",
+        "budget": 150
+    },
+    {
+        "title": "Investments",
+        "budget": 1000
+    }
+]
+}

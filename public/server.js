@@ -1,33 +1,32 @@
 const express = require('express');
+const fs = require('fs').promises;
 const app = express();
 const port = 3000;
 
 app.use('/', express.static('public'));
 
-const budget = {
-    myBudget: [
-    {
-        title: 'Pharmacy',
-        budget: 120
-    },
-    {
-        title: 'Insurance',
-        budget: 220
-    },
-    {
-        title: 'Groceries',
-        budget: 300
-    },
-    {
-        title: 'Rent',
-        budget: 1200
+// Async function to load the budget data from the JSON file
+async function loadBudgetData() {
+    try {
+        // Read the file and parse the JSON content
+        const data = await fs.readFile('public/myBudget.json', 'utf8');
+        return JSON.parse(data); // Convert the JSON string into an object
+    } catch (error) {
+        console.error('Error reading budget data:', error);
+        throw error; // Rethrow to handle error in route
     }
-]
-};
+}
 
-app.get('/budget', (req, res) => {
-    res.json(budget);
+// Route to return budget data from the JSON file
+app.get('/budget', async (req, res) => {
+    try {
+        const budget = await loadBudgetData(); // Load budget data from file
+        res.json(budget); // Send the data as JSON
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to load budget data' }); // Handle error
+    }
 });
+
 app.get('/hello', (req, res) => {
     res.send('Hello World!');
 });
