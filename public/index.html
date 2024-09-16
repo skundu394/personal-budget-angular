@@ -51,11 +51,9 @@
             </div>
     
             <div class="text-box">
-                <h1>Results</h1>
+                <h1>Donut Chart</h1>
                 <p>
-                    People who stick to a financial plan, budgeting every expense, get out of debt faster!
-                    Also, they to live happier lives... since they expend without guilt or fear... 
-                    because they know it is all good and accounted for.
+                    <canvas id="myDonutChart" width="400" height="400"></canvas>
                 </p>
             </div>
     
@@ -158,7 +156,7 @@
     <script>
        var datasource = {
             datasets: [{
-                data: [1200, 120, 220, 300],
+                data: [1200, 120, 220, 300, 200, 150, 1000],
                 backgroundColor: [
                     '#ffcd56',
                     '#ff6384',
@@ -175,7 +173,10 @@
                 'Rent',
                 'Pharmacy',
                 'Insurance',
-                'Groceries'
+                'Groceries',
+                'Travel Expenses',
+                'Internet',
+                'Investments'
             ]
         };
     
@@ -199,6 +200,46 @@
         });
         }
         getBudget();
+
+        var donutDatasource = {
+            datasets: [{
+                data: [120, 220, 340, 400, 450],
+                backgroundColor: [
+                    '#008000',
+                    '#9932CC',
+                    '#FFC0CB',
+                    '#0000FF',
+                    '#40E0D0',
+                    
+                ],
+            }],
+
+            // These flavors appear in the legend and in the tooltips when hovering different arcs
+            labels: [
+                'Vanilla',
+                'Black Forest',
+                'Mango',
+                'Tiramisu',
+                'White Forest',
+            ]
+        };
+
+        function createDonutChart() {
+            var ctx = document.getElementById("myDonutChart").getContext("2d");
+            var myDonutChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: donutDatasource
+            });
+        }
+
+        function getCakeVarieties() {
+            axios.get('/cake-varieties')
+            .then(function (res){
+                console.log(res.data);
+            createDonutChart();
+        });
+        }
+        getCakeVarieties();
     </script>
 
 <footer>

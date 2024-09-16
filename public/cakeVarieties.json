@@ -1,0 +1,24 @@
+{
+    "cakeVarieties": [
+    {
+        "flavor": "Vanilla",
+        "cost": 120
+    },
+    {
+        "flavor": "Black Forest",
+        "cost": 220
+    },
+    {
+        "flavor": "Mango",
+        "cost": 340
+    },
+    {
+        "flavor": "Tiramisu",
+        "cost": 400
+    },
+    {
+        "flavor": "White Forest",
+        "cost": 450
+    }
+]
+}
