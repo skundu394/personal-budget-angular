@@ -9,6 +9,7 @@ import { Component, OnInit} from '@angular/core';
 })
 export class ArticleComponent implements OnInit {
 
+  constructor() { }
   ngOnInit(): void {
 
   }
