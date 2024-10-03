@@ -3,6 +3,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { P404Component } from './p404/p404.component';
+import { ContactComponent } from './contact/contact.component';
 
 export const routes: Routes = [
   {
@@ -17,8 +18,16 @@ export const routes: Routes = [
   {
     path:'login',
     component: LoginComponent
+  },
+  {
+    path:'personal-budget',
+    component: HomepageComponent,
   }
   ,
+  {
+    path:'contact',
+    component: ContactComponent,
+  },
   {
     path:'**',
     component: P404Component

@@ -1,43 +1,39 @@
 
 <div class="container center">
+  <pb-breadcrumbs>
+  </pb-breadcrumbs>
+
   <!-- This is an A11y Change,  Accessible Images with alt -->
   <img src="bg.png" alt="Mobile and Desktop accessible for personal budget management." />
   <div class="page-area">
 
-    <div>
-      <pb-article>
+    <pb-article>
 
           <h1>Stay on track</h1>
           <p>Do you know where you are spending your money? If you really stop to track it down, you would get surprised! Proper budget management depends on real data... and this app will help you with that!
           </p>
 
         </pb-article>
-      </div>
 
-      <div>
       <pb-article>
           <h1>Alerts</h1>
           <p>What if your clothing budget ended? You will get an alert. The goal is to never go over the budget."
           </p>
       </pb-article>
-    </div>
-    <div>
+
       <article>
           <h1>Donut Chart</h1>
           <p>
               <canvas id="myDonutChart" width="400" height="400"></canvas>
           </p>
       </article>
-      </div>
 
-    <div>
       <article> <h1>Chart</h1>
           <p>
               <canvas id="myChart" width="400" height="400"></canvas>
           </p>
       </article>
-    </div>
-    <div>
+
           <!-- This is an SEO Change -->
           <article> <h1>Ask AI!</h1>
           <p>
@@ -62,8 +58,7 @@
               </form>
 
           </article>
-        </div>
-      <div>
+
           <!-- This is an SEO Change -->
           <article> <h1>Savings Goals</h1>
           <p>
@@ -80,8 +75,7 @@
               <input type="submit" value="Set Goal">
               </form>
           </article>
-      </div>
-    <div>
+
           <!-- This is an SEO Change -->
           <article><h1>Budget Forecast</h1>
 
@@ -96,8 +90,7 @@
               <p>Based on your past expenses, AI recommends reducing dining expenses by 15% to save an extra $200/month.</p>
 
             </article>
-    </div>
-    <div>
+
           <!-- This is an SEO Change -->
               <article><h1>Set Bill Reminders</h1>
               <p>
@@ -111,10 +104,8 @@
                   <input type="submit" value="Set Reminder">
                   </form>
                 </article>
-    </div>
 
   </div>
-
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js" integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -147,27 +138,30 @@
           'Investments'
       ]
   };
+  <pb-pie>
 
-  function createChart() {
-      var ctx = document.getElementById("myChart").getContext("2d");
-      var myPieChart = new Chart(ctx, {
-          type: 'pie',
-          data: datasource
-      });
-  }
+  </pb-pie>
 
-  function getBudget() {
-      axios.get('/budget')
-      .then(function (res){
-          console.log(res.data);
-      // for (var i=0; i< res.data.myBudget.length; i++) {
-      //     datasource.datasets[0].data[i] = res.data.myBudget[i].budget;
-      //     datasource.labels[i] = res.data.myBudget[i].title;
-      // }
-      createChart();
-  });
-  }
-  getBudget();
+  // function createChart() {
+  //     var ctx = document.getElementById("myChart").getContext("2d");
+  //     var myPieChart = new Chart(ctx, {
+  //         type: 'pie',
+  //         data: datasource
+  //     });
+  // }
+
+  // function getBudget() {
+  //     axios.get('/budget')
+  //     .then(function (res){
+  //         console.log(res.data);
+  //     // for (var i=0; i< res.data.myBudget.length; i++) {
+  //     //     datasource.datasets[0].data[i] = res.data.myBudget[i].budget;
+  //     //     datasource.labels[i] = res.data.myBudget[i].title;
+  //     // }
+  //     createChart();
+  // });
+  // }
+  // getBudget();
 
   var donutDatasource = {
       datasets: [{

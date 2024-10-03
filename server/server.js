@@ -1,7 +1,9 @@
+const cors = require('cors')
 const express = require('express');
 const fs = require('fs').promises;
 const app = express();
 const port = 3000;
+app.use(cors())
 
 app.use('/', express.static('public'));
 
@@ -9,7 +11,7 @@ app.use('/', express.static('public'));
 async function loadBudgetData() {
     try {
         // Read the file and parse the JSON content
-        const data = await fs.readFile('public/myBudget.json', 'utf8');
+        const data = await fs.readFile('myBudget.json', 'utf8');
         return JSON.parse(data); // Convert the JSON string into an object
     } catch (error) {
         console.error('Error reading budget data:', error);
@@ -34,7 +36,7 @@ app.get('/hello', (req, res) => {
 async function loadCakeVarietiesData() {
     try {
         // Read the file and parse the JSON content
-        const data = await fs.readFile('public/cakeVarieties.json', 'utf8');
+        const data = await fs.readFile('../public/cakeVarieties.json', 'utf8');
         return JSON.parse(data); // Convert the JSON string into an object
     } catch (error) {
         console.error('Error reading Cake Varieties data:', error);
